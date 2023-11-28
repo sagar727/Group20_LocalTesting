@@ -31,4 +31,27 @@ class EmailValidatorTest {
         assertEquals(false,result)
     }
 
+    @Test
+    fun incorrectEmailAddressFormat(){
+        val result = EmailValidator.isValidEmail("@abc.com")
+        assertEquals(false, result)
+    }
+
+    @Test
+    fun incorrectEmailDomainFormat(){
+        val result = EmailValidator.isValidEmail("testing123")
+        assertEquals(false, result)
+    }
+
+    @Test
+    fun incorrectEmailWithEmptyString(){
+        val result = EmailValidator.isValidEmail("")
+        assertEquals(false, result)
+    }
+
+    @Test
+    fun incorrectEmailWithNull(){
+        val result = EmailValidator.isValidEmail(null)
+        assertEquals(false, result)
+    }
 }
