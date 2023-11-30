@@ -58,7 +58,7 @@ class MainActivityTest{
 
         onView(withId(R.id.changeTextBt)).perform(click())
 
-        onView(withId(R.id.show_text_view)).check(matches(withText("abcdef")))
+        onView(withId(R.id.textToBeChanged)).check(matches(withText("abcdef")))
     }
 
     @Test
